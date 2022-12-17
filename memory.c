@@ -6,4 +6,13 @@
  * Return: 1 if freed and nil if not
  */
 
-int bfree(void
+int bfree(void **ptr)
+{
+	if (ptr && *ptr)
+	{
+		free(*ptr);
+		*ptr = NULL;
+		return (1);
+	}
+	return (0);
+}
